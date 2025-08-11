@@ -49,6 +49,34 @@ export function createPhotosFromFolder(folderName: string): Photo[] {
     return photoFiles.map((filePath) => createPhoto(filePath, "vertical"));
 }
 
+export function getCoverFromFolder(
+    folderName: string,
+    exactFile?: string
+): string {
+    const normalized = folderName.replace(/^\/+|\/+$/g, "");
+    const prefix = `/src/photos/${normalized}/`;
+
+    const entries = Object.entries(allPhotos).filter(([p]) =>
+        p.startsWith(prefix)
+    );
+
+    if (exactFile) {
+        const hit = entries.find(([p]) => p.endsWith(`/${exactFile}`));
+        if (hit) return hit[1]; // URL resolvida pelo bundler
+    }
+
+    const [first] = entries
+        .map(([, url]) => url)
+        .sort((a, b) =>
+            a.localeCompare(b, undefined, {
+                numeric: true,
+                sensitivity: "base",
+            })
+        );
+
+    return first ?? "";
+}
+
 export type Post = {
     id: string;
     title: string;
