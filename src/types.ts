@@ -16,19 +16,31 @@ export function createPhoto(
     };
 }
 
+/**
+ * Vercel/Vite friendly:
+ * - Vite não faz glob em /public. Por isso varremos /src/photos/** no build.
+ * - Em runtime, filtramos pela pasta (folderName) e ordenamos naturalmente.
+ * - O `as:"url"` já retorna a URL final (hash/resolvida), pronta para <img/>.
+ */
+const allPhotos = import.meta.glob(
+    "/src/photos/**/*.{png,jpg,jpeg,JPG,webp,avif,heic,HEIC}",
+    { eager: true, as: "url" }
+) as Record<string, string>;
+
 function getPhotoFiles(folderName: string): string[] {
-    // Carrega todos os arquivos de todas as pastas dentro de /public/photos
-    const modules = import.meta.glob(
-        "/public/photos/**/*.{png,jpg,jpeg,JPG,webp,heic,HEIC}",
-        { eager: true, as: "url" }
-    ) as Record<string, string>;
+    // normaliza: remove barras extras
+    const normalized = folderName.replace(/^\/+|\/+$/g, "");
+    const prefix = `/src/photos/${normalized}/`;
 
-    // Filtra apenas os que pertencem à pasta solicitada
-    const urls = Object.values(modules).filter((url) =>
-        url.includes(`/photos/${folderName}/`)
-    );
-
-    return urls;
+    return Object.entries(allPhotos)
+        .filter(([path]) => path.startsWith(prefix))
+        .map(([, url]) => url)
+        .sort((a, b) =>
+            a.localeCompare(b, undefined, {
+                numeric: true,
+                sensitivity: "base",
+            })
+        );
 }
 
 // Public function to create photos from folder - all marked as vertical
@@ -42,7 +54,7 @@ export type Post = {
     title: string;
     date: string; // YYYY-MM-DD
     tags: string[];
-    cover: string; // "/photos/whatever.jpg" from /public - main display image
+    cover: string; // pode continuar usando "/photos/whatever.jpg" se estiver em /public
     photos: Photo[]; // array of photos with orientation info
     excerpt: string;
     body: string[]; // array of paragraphs
