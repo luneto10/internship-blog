@@ -7,7 +7,7 @@ export const posts: Post[] = [
         title: "Week 1 — Kickoff & Setup at BTG Pactual",
         date: "2025-06-08",
         tags: ["onboarding", "tools"],
-        cover: "/photos/week1/1.jpeg",
+        cover: "src/photos/week1/1.jpeg",
         photos: createPhotosFromFolder("week1"),
         excerpt:
             "Laptop configured, repos cloned, meeting with the other summers, team and CEO (Roberto Sallouti).",
@@ -21,7 +21,7 @@ export const posts: Post[] = [
         title: "Edifício Pátio Victor Malzoni (Pátio Victor Malzoni Building) - The Coolest Building Ever",
         date: "2025-06-09",
         tags: ["building", "architecture"],
-        cover: "/photos/predio/0.jpg",
+        cover: "src/photos/predio/0.jpg",
         photos: createPhotosFromFolder("predio"),
         excerpt: "I worked in one of the coolest buildings in São Paulo.",
         body: [
@@ -35,7 +35,7 @@ export const posts: Post[] = [
         title: "Eating in São Paulo - The Best Experience in the World",
         date: "2025-06-10",
         tags: ["food", "restaurant"],
-        cover: "/photos/food/1.jpg",
+        cover: "src/photos/food/1.jpg",
         photos: createPhotosFromFolder("food"),
         excerpt:
             "São Paulo has the best food in the world, and my Sundays always start at Le Blé.",
@@ -52,7 +52,7 @@ export const posts: Post[] = [
         title: "Family in São Paulo (Some Came to Visit Me)",
         date: "2025-07-10",
         tags: ["family", "restaurant", "visit"],
-        cover: "/photos/family/1.jpg",
+        cover: "src/photos/family/1.jpg",
         photos: createPhotosFromFolder("family"),
         excerpt:
             "My uncles live in São Paulo, and my parents, brother, and girlfriend came to visit me.",
@@ -69,7 +69,7 @@ export const posts: Post[] = [
         title: "Mid-Internship - Real Part of the Team",
         date: "2025-07-12",
         tags: ["team", "project", "meeting"],
-        cover: "/photos/midintern/1.jpg",
+        cover: "src/photos/midintern/1.jpg",
         photos: createPhotosFromFolder("midintern"),
         excerpt:
             "By this point, I was being included in important decisions, meetings, and even lunches with partners and directors.",
@@ -86,7 +86,7 @@ export const posts: Post[] = [
         title: "For Fun - What I Did Outside of Work",
         date: "2025-08-10",
         tags: ["fun", "outside"],
-        cover: "/photos/fun/1.jpg",
+        cover: "src/photos/fun/1.jpg",
         photos: createPhotosFromFolder("fun"),
         excerpt:
             "Outside work, I explored São Paulo: Beco do Batman, Museu do Ipiranga, and lots of basketball.",
@@ -103,7 +103,7 @@ export const posts: Post[] = [
         title: "THE END - Unforgettable Experience",
         date: "2025-08-29",
         tags: ["end", "experience"],
-        cover: "/photos/end/1.jpg",
+        cover: "src/photos/end/1.jpg",
         photos: createPhotosFromFolder("end"),
         excerpt: "TODO",
         body: ["TODO"],
