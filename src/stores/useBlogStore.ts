@@ -2,18 +2,32 @@ import { create } from "zustand";
 
 interface BlogState {
     search: string;
-    tag: string | null;
+    tags: string[];
     setSearch: (s: string) => void;
-    setTag: (t: string | null) => void;
+    setTags: (t: string[]) => void;
+    addTag: (t: string) => void;
+    removeTag: (t: string) => void;
+    clearTags: () => void;
     dark: boolean;
     toggleDark: () => void;
+    cmdkOpen: boolean;
+    setCmdkOpen: (open: boolean) => void;
 }
 
 export const useBlogStore = create<BlogState>((set) => ({
     search: "",
-    tag: null,
+    tags: [],
     setSearch: (s) => set({ search: s }),
-    setTag: (t) => set({ tag: t }),
+    setTags: (t) => set({ tags: t }),
+    addTag: (t) =>
+        set((state) => ({
+            tags: state.tags.includes(t) ? state.tags : [...state.tags, t],
+        })),
+    removeTag: (t) =>
+        set((state) => ({
+            tags: state.tags.filter((tag) => tag !== t),
+        })),
+    clearTags: () => set({ tags: [] }),
     dark: false,
     toggleDark: () =>
         set((st) => {
@@ -23,4 +37,6 @@ export const useBlogStore = create<BlogState>((set) => ({
             }
             return { dark: next };
         }),
+    cmdkOpen: false,
+    setCmdkOpen: (open) => set({ cmdkOpen: open }),
 }));

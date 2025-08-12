@@ -222,14 +222,6 @@ export default function PostCard({ post }: { post: Post }) {
                                 className="max-w-[95vw] max-h-[95vh] object-contain"
                             />
                         )}
-                        <Button
-                            variant="outline"
-                            size="sm"
-                            onClick={() => setExpandedPhoto(null)}
-                            className="absolute top-2 right-2 bg-white/90 hover:bg-white dark:bg-stone-900/90 dark:hover:bg-stone-900 border-0 shadow-lg"
-                        >
-                            <X className="h-4 w-4" />
-                        </Button>
                     </div>
                 </DialogContent>
             </Dialog>

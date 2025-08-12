@@ -4,10 +4,11 @@ import { useBlogStore } from "@/stores/useBlogStore";
 import ThemeToggle from "@/components/ThemeToggle";
 import PostCard from "@/components/PostCard";
 import Filters from "@/components/Filters";
+import CommandPalette from "@/components/CommandPalette";
 
 export default function App() {
     const search = useBlogStore((s) => s.search);
-    const tag = useBlogStore((s) => s.tag);
+    const tags = useBlogStore((s) => s.tags);
 
     const posts = useMemo(() => {
         const q = search.trim().toLowerCase();
@@ -18,13 +19,17 @@ export default function App() {
                     .join(" ")
                     .toLowerCase()
                     .includes(q);
-            const matchesTag = tag === null || p.tags.includes(tag);
-            return matchesQ && matchesTag;
+            const matchesTags =
+                tags.length === 0 || tags.some((tag) => p.tags.includes(tag));
+            return matchesQ && matchesTags;
         }).sort((a, b) => b.date.localeCompare(a.date));
-    }, [search, tag]);
+    }, [search, tags]);
 
     return (
         <div className="mx-auto max-w-6xl px-4 py-10">
+            {/* Command Palette - Available globally */}
+            <CommandPalette />
+
             {/* Header */}
             <header className="mb-8 flex items-center justify-between">
                 <div>
