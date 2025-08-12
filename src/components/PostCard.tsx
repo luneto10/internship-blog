@@ -188,7 +188,7 @@ export default function PostCard({ post }: { post: Post }) {
                             {post.body.map((para, i) => (
                                 <p
                                     key={i}
-                                    className="text-sm leading-7 text-stone-700 dark:text-stone-200"
+                                    className="text-base leading-7 text-stone-700 dark:text-stone-200"
                                 >
                                     {para}
                                 </p>

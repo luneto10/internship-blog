@@ -12,7 +12,7 @@ export const posts: Post[] = [
         excerpt:
             "Laptop configured, repos cloned, meeting with the other summers, team and CEO (Roberto Sallouti).",
         body: [
-            "I started my internship at BTG Pactual, largest and most important investment bank in Latin America, by getting access to the company repository and internal tooling. My mentor walked me through the branching strategy and CI rules. I also met with the other summers, team and CEO (Roberto Sallouti).",
+            "I started my internship at BTG Pactual, largest and most important investment bank in Latin America, as a foreign Software Engineering intern in the IT FX team. My mentor walked me through the branching strategy and CI rules. I also met with the other summers, team and CEO (Roberto Sallouti).",
             "I started to work on a small project to learn the codebase and the company's culture. I created an automation to generate an Excel sheet for the Tax Team to help with the Brazilian Government's tax collection.",
         ],
     },
@@ -84,7 +84,7 @@ export const posts: Post[] = [
     {
         id: "forfun",
         title: "For Fun - What I Did Outside of Work",
-        date: "2025-08-10",
+        date: "2025-07-11",
         tags: ["fun", "outside"],
         cover: getCoverFromFolder("fun"),
         photos: createPhotosFromFolder("fun"),
@@ -96,6 +96,70 @@ export const posts: Post[] = [
             "That big painting in my photos is “Independência ou Morte!” (Independence or Death!) by Pedro Américo. It shows Dom Pedro I proclaiming Brazil’s independence on September 7, 1822, near the Ipiranga stream — dramatic horses, raised swords, the whole epic moment that marks the birth of the nation.",
             "In between museums and murals, I played a lot of basketball — pickup games on neighborhood courts until my legs begged for mercy. Best stress relief in the city.",
             "If you’re in São Paulo, you should visit these spots. Beco do Batman for the vibes, Museu do Ipiranga for the story, and any court for a quick game. Trust me — perfect combo.",
+        ],
+    },
+    {
+        id: "technical-skills",
+        title: "Technical Skills Learned - From Code to Architecture",
+        date: "2025-08-11",
+        tags: [
+            "technical",
+            "skills",
+            "C#",
+            "AWS",
+            "DynamoDB",
+            "CI/CD",
+            "Security",
+            "Performance",
+        ],
+        cover: getCoverFromFolder("tech"),
+        photos: createPhotosFromFolder("tech"),
+        excerpt:
+            "What I learned building real systems on BTG Pactual’s IT FX team.",
+        body: [
+            "Working on the IT FX team at BTG Pactual showed me how big-company software really works. The systems are large, sometimes fast, and audited. It was pressure, but the good kind.",
+            "I learned microservices the practical way: services talking over APIs and message queues, and a lot of AWS. I also had to read many repos and understand how they connect, which made me faster at finding the right place to change.",
+            "Database work became a daily skill. I used relational and NoSQL (DynamoDB), learned when to pick each one, wrote efficient queries, added indexes, and thought about real-time data needs.",
+            "The CI/CD pipeline opened my eyes: automated tests, code quality gates, and safe deployments.",
+            "Security was everywhere: authentication, roles and permissions, secret management, and encryption in transit and at rest. I also saw why compliance and audit logs matter in finance.",
+            "Performance became a habit. With high-frequency data, every millisecond counts. I profiled hot paths, batched calls, cached what made sense, and used async patterns to keep things smooth.",
+        ],
+    },
+    {
+        id: "soft-skills",
+        title: "Soft Skills - The Human Side of Software Engineering",
+        date: "2025-08-10",
+        tags: ["soft-skills", "communication", "teamwork"],
+        cover: getCoverFromFolder("soft"),
+        photos: createPhotosFromFolder("soft"),
+        excerpt:
+            "The people skills that made the work flow and the results better.",
+        body: [
+            "Communication turned into my top skill. I practiced clear writing and simple speech so ideas landed the first time, with both technical folks and non-technical partners. At a point of the internship, I had as much meeting as I had coding. I felt important in the team!",
+            "Teamwork was daily life. Projects crossed teams, so I learned to listen, align expectations, and turn business needs into practical tasks we could deliver.",
+            "Time management got sharper. With many parallel tasks, I set priorities by impact and urgency, protected focus time, and gave status early to avoid surprises.",
+            "Problem-solving moved beyond code. I learned to find root causes, ask better questions, and fix the real issue.",
+            "Adaptability became natural. New tools, new rules, and quick changes are normal in fintech, so I learned fast and kept moving. Our systems are all connected, every we are consuming and producing data from other teams. To understand a simple feature, I had to understand the whole system. Talking in one day with 7 teams to understand the workflow of a currency exchange.",
+            "Leadership showed up as ownership (BTG Pactual value). I ran small demos, unblocked teammates, and documented steps so others could repeat wins without me.",
+        ],
+    },
+    {
+        id: "future-applications",
+        title: "Future Applications - How This Experience Will Shape My Career",
+        date: "2025-08-12",
+        tags: ["future", "career", "applications"],
+        cover: getCoverFromFolder("future"),
+        photos: createPhotosFromFolder("future"),
+        excerpt:
+            "How these lessons guide my next steps as a software engineer.",
+        body: [
+            "The technical base I built will stay with me. I now think about scalability, maintainability, and performance from day one.",
+            "We also had a talk with CEO Roberto Sallouti about the future: why technology is core to finance, and how AI will reshape products, risk, and operations. It made the path ahead feel clear and exciting.",
+            "Fintech knowledge is a plus. Understanding systems, regulation, and risk helps me design safer and more useful software.",
+            "The international experience broadened my view. Working in a new country and culture taught me to adapt fast and work well with diverse teams.",
+            "Soft skills will matter even more as I grow. Clear communication, collaboration, and leading by example open doors in any role.",
+            "The network I built is real. Friends and mentors from different backgrounds will keep pushing me to learn and share.",
+            "Most of all, I learned software is about people and value, not only code. I want roles where I can solve real problems and make a difference.",
         ],
     },
     {
